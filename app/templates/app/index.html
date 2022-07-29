@@ -1,0 +1,390 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'music_css.css' %}">
+	<script src="https://kit.fontawesome.com/377c62b438.js" crossorigin="anonymous"></script>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Music Player</title>
+</head>
+<body>
+
+	 <div id = "main-div">
+
+	    <header id = "main-header">
+
+			<!-- MUSIC LOGO IMAGE -->
+			<div class = "header-logo">
+					<img class = "logo" src="https://img.freepik.com/premium-vector/music-logo-business-colorful-gradient-design_483537-500.jpg">
+			</div>
+			
+			<div class="studio-name">
+				<p>Gaurav Studio</p>
+			</div>
+
+			<!-- FAVOURITES -->
+
+			<div class="Favourites">
+				<a href="#">Favourites</a>
+			</div>
+
+			<!-- SEARCH BAR WITH ICONS -->
+
+			<div class = "header-search">
+					<i class="fa-solid fa-magnifying-glass"></i>
+					<input class = "input-field" type="text" placeholder="Search">
+
+					<div class="microphone">
+						<i class="fa-solid fa-microphone"></i>
+					</div>
+
+			</div>
+
+			<!-- NOTIFICATION ICON -->
+
+			<div class="notification bell">
+				<a href="#notification-page">
+					<i class="fa-solid fa-bell"></i>
+				</a>	
+			</div>
+			
+			<!-- NOTIFICATION ICON ANIMATION -->
+			
+			<div id = "notification-page">
+
+				<a class = "anchor-page" href="#"><i class="fa-solid fa-xmark"></i></a>
+
+				<div class="notification-content">
+					<h3>Notifications</h3>
+					<hr>
+					<p>No new notifications</p>
+					<hr>
+					<a href="#">Older Notifications</a>
+				</div>
+
+			</div>
+
+
+			<!-- LOGIN PAGE -->
+			{% if msg %}
+			<div class="Login">
+				<a  href="#">
+				<button>{{msg}}</button>
+				</a>
+				<a  href="/login/">
+					<button>Log Out</button>
+					</a>
+			</div>
+			{% else %}
+			<div class="Login">
+				<a  href="/login/">
+				<button>Login</button>
+				</a>
+				<a  href="/signup/">
+					<button>Sign up</button>
+					</a>
+			</div>
+			{% endif %}
+
+			<!-- LOGIN PAGE ANIMATION -->
+
+			<div id="Login-page">
+
+				<span>Login/Sign Up</span>
+				<a href="#"><i class="fa-solid fa-xmark"></i></a>
+
+
+			   <div id = "main-sign-in1">
+					
+					<div id = "sign-in">							
+							<div class="social-border">
+								<form action="" method="post">
+									<div>
+										
+										<input type="text" name="Username" value="Username">
+									</div>
+								</form>
+							</div>							
+					</div>
+				</div>
+
+				
+
+
+				<div class="login-button">
+					<!-- <button type="submit" onclick="document.location='#main-div'">Continue</button> -->
+					<button type="submit" onclick="document.location='#main-div'">Sign Up</button>
+				</div>
+
+			</div>
+
+			<!--END OF LOGIN PAGE ANIMATION  -->
+			
+	    </header>	
+
+		<!-- Main -->
+
+		<main>
+
+            <!-- ARTIST IMAGES AND ABOUT SECTION -->
+
+			<div id = "aside">
+				
+				<div class="main-artist">
+					
+					<div class = "artist-image">
+					<img src="https://img.redbull.com/images/c_crop,x_790,y_0,h_2129,w_1597/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2019/06/21/b4d4fe5c-1ee5-44f7-8af4-1393acf2eac8/divine-mumbai-rapper">
+				</div>
+				
+				<div class = "about-artist">
+					
+                    <div class = "artist-header">
+						
+						<div class = "div-1">
+							<h3>Vivian Wilson Fernandes</h3>
+                        </div>
+						
+                        <div>
+							<h3>1.8M followers</h3>                
+                        </div>
+						
+                    </div>
+					
+                    <div class="artist-country">
+						<h3>Indian Rapper</h3>
+                    </div>
+					
+                    <div class = "artist-content">
+						<p>
+							Vivian Wilson Fernandes, better known by his stage name DIVINE, is an Indian rapper and songwriter from Mumbai, Maharashtra. He started to gain popularity after the release of his song "Yeh Mera Bombay". He broke through with the release of his song "Mere Gully Mein" featuring fellow Mumbai rapper Naezy.
+                        </p>
+                    </div>
+					
+                    <div class="playall-button">
+						<button type="button">Play All</button>
+                        <span><a href = "#playall-button-animation">Follow</a></span>
+                    </div>
+
+                    <!-- SMALL PLAYALL BUTTON ANIMATION -->
+					
+                    <div id = "playall-button-animation">
+						<p>
+							Followed
+                            <i class="fa-solid fa-check"></i>
+                        </p>
+                    </div>
+					
+				</div>
+			</div>
+
+			<div id = "aside-section">
+				<div class="section-1">
+					<h3>Similar Artist
+						<span>view all</span>
+					</h3>
+
+					<div class = "aside-image">
+						<img src = "https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+						<span>Danger one</span>
+					</div>
+
+					<div class="aside-image-2">
+						<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkXTZnB42I1VFXJ4XnF2lxB8wHwE3Aywbn_g&usqp=CAU">
+						<span>Danger two</span>
+					</div>
+
+				</div>
+
+				<div class="section-2">
+					<h3>Recently Played
+						<span>view all</span>
+					</h3>
+
+					<div class = "song">
+						<span>01</span>
+						<img src = "https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+						<span class="span-1">Heaven</span>
+						<span class="inner-i-1">
+							<i class="fa-regular fa-heart"></i>		
+						</span>							
+					</div>
+
+					<div class = "song">
+						<span>02</span>
+						<img src = "https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png">
+						<span class="span-1">Arcade</span>
+						<span class="inner-i-1">
+							<i class="fa-regular fa-heart"></i>		
+						</span>			
+							
+					</div>
+
+					<div class = "song">
+						<span>04</span>
+						<img src = "https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+						<span class="span-1">Arcade</span>
+						<span class="inner-i-1">
+							<i class="fa-regular fa-heart"></i>		
+						</span>
+						
+					</div>
+
+						<div class = "song">
+							<span>03</span>
+							<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkXTZnB42I1VFXJ4XnF2lxB8wHwE3Aywbn_g&usqp=CAU">
+							<span class="span-1">Heaven</span>
+							<span class="inner-i-1">
+								<i class="fa-regular fa-heart"></i>		
+							</span>
+								
+						</div>
+
+				</div>
+			</div>
+				
+       </div>
+                    <!-- END OF PLAYALL BUTTON ANIMATION -->
+                    
+                    <!-- MUSIC LIST -->
+                    					
+                <div class = "music-list">
+
+                    <div class="music-design">
+
+                        <div class = "song">
+							<span>01</span>
+							<img src = "https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+							<span class="span-1">Heaven</span>
+							<span class="inner-i-1">
+								<i class="fa-regular fa-heart"></i>		
+							</span>
+		
+							<span class = "inner-i">
+								<i class="fa-solid fa-plus"></i>					
+							</span>
+								
+						</div>
+
+                    </div>
+					<div class="music-design">
+						<div class = "song">
+							<span>02</span>
+							<img src = "https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png">
+							<span class="span-1">Arcade</span>
+							<span class="inner-i-1">
+								<i class="fa-regular fa-heart"></i>		
+							</span>
+
+							<span class = "inner-i">
+								<i class="fa-solid fa-plus"></i>					
+							</span>
+								
+						</div>
+                    </div>
+					
+					<div class="music-design">
+						<div class = "song">
+							<span>03</span>
+							<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkXTZnB42I1VFXJ4XnF2lxB8wHwE3Aywbn_g&usqp=CAU">
+							<span class="span-1">Heaven</span>
+							<span class="inner-i-1">
+								<i class="fa-regular fa-heart"></i>		
+							</span>
+	
+							<span class = "inner-i">
+								<i class="fa-solid fa-plus"></i>					
+							</span>
+								
+						</div>
+                    </div>
+					<div class="music-design">
+						<div class = "song">
+							<span>04</span>
+							<img src = "https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+							<span class="span-1">Arcade</span>
+							<span class="inner-i-1">
+								<i class="fa-regular fa-heart"></i>		
+							</span>
+		
+							<span class = "inner-i">
+								<i class="fa-solid fa-plus"></i>					
+							</span>
+								
+						</div>
+                    </div>
+					<div class="music-design">
+						<div class = "song">
+							<span>05</span>
+							<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDJa9jIAh0J-MgrRBraBkyMllBn5cmWGRtWg&usqp=CAU">
+							<span class="span-1">Heaven</span>
+							<span class="inner-i-1">
+								<i class="fa-regular fa-heart"></i>		
+							</span>
+	
+							<span class = "inner-i">
+								<i class="fa-solid fa-plus"></i>					
+							</span>
+								
+						</div>
+                    </div>
+                </div>
+
+				<div class = "bottom-music-player">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkXTZnB42I1VFXJ4XnF2lxB8wHwE3Aywbn_g&usqp=CAU">
+					<span>Arcade</span>
+					<span>
+						<i class="fa-regular fa-heart"></i>
+					</span>
+					
+					<span class = "another">
+						<i class="fa-solid fa-ban"></i>					
+					</span>
+
+					<span class = "shuffle">
+						<i class="fa-solid fa-shuffle"></i>				
+					</span>
+
+					<span class = "backward">
+						<i class="fa-solid fa-backward-step"></i>			
+					</span>
+
+					<span class = "pause">
+						<i class="fa-regular fa-circle-pause"></i>			
+					</span>
+
+					<span class = "forward">
+						<i class="fa-solid fa-forward-step"></i>			
+					</span>
+
+					<span class = "repeat">
+						<i class="fa-solid fa-repeat"></i>		
+					</span>
+
+					<span class = "repeat1">
+						<i class="fa-solid fa-volume-high"></i>	
+					</span>
+
+					<span class = "line-1">
+						<span></span>
+					</span>
+
+					<span class = "expand">
+						<i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+					</span>
+
+					<span class="start-time">4:44</span>
+
+					<div class = "playing">
+						<div class = "circle-playing">
+
+						</div>
+					</div>
+					<span class="end-time">4:44</span>
+
+				</div>
+		</main>
+		
+	 </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'music_css.css' %}">
+	<script src="https://kit.fontawesome.com/377c62b438.js" crossorigin="anonymous"></script>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+</head>
+<body>
+    <center>
+        <div id = "main-div">
+
+            <header id = "main-header">
+                <div class = "header-logo">
+                    <img class = "logo" src="https://img.freepik.com/premium-vector/music-logo-business-colorful-gradient-design_483537-500.jpg">
+            </div>
+            </header>
+            {% if msg %}
+            <div class="studio-name">
+                <h1 style="color: white;">{{msg}}</h1>
+            </div>
+            {% endif %}
+    <div class="studio-name">
+        <h1 style="color: white;">Login</h1>
+    </div>
+    <div class = "about-artist">
+					
+        <div class = "artist-header">
+            
+            <div class = "div-1">
+                <h3></h3>
+            </div>
+            
+            <div>
+                <h3></h3>                
+            </div>
+            
+        </div>
+    <form action="{% url 'login_data' %}" method="post">
+        {% csrf_token %}
+        <h2 style="color: white;">Email</h2>
+        <input type="email" name="username">
+        <h2 style="color: white;">Password</h2>
+        <input type="password" name="password">
+        <h2></h2>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        
+
+    </form>
+    </div>
+    </center>
+</body>
+</html>
